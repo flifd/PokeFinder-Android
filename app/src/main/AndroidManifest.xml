@@ -12,7 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PokeFinderAndroid">
         <activity
-            android:name=".Gen3MainActivity"
+            android:name=".gen3.Gen3MainActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".gen3.Gen3WildActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".gen3.Gen3ProfileActivity"
             android:exported="false">
         </activity>
         <activity

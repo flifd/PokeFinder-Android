@@ -1,4 +1,4 @@
-package com.example.pokefinderandroid
+package com.example.pokefinderandroid.gen3
 
 object Gen3Bridge {
     init {
