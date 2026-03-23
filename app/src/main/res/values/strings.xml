@@ -6,5 +6,12 @@
     <string name="gen6">Gen 6</string>
     <string name="gen7">Gen 7</string>
     <string name="gen8">Gen 8</string>
-    <string name="title_activity_gen3_main">Gen3Main</string>1
+    <string name="title_activity_gen3_main">Gen3Main</string>
+
+    <string name="egg">Egg</string>
+    <string name="gamecube">GameCube</string>
+    <string name="ids">IDs</string>
+    <string name="strstatic">Static</string>
+    <string name="wild">Wild</string>
+
 </resources>

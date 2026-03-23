@@ -1,6 +1,8 @@
 package com.example.pokefinderandroid
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -11,6 +13,12 @@ class MainActivity : AppCompatActivity() {
         val cv = R.layout.activity_main
 
         setContentView(cv)
+    }
+
+    fun openGenView(view: View?) {
+
+        val intent = Intent(this, Gen3MainActivity::class.java)
+        startActivity(intent)
     }
 
 //    fun generateMon(view: View?) {
