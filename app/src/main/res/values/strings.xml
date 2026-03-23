@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">PokeFinder Android</string>
+    <string name="gen3">Gen 3</string>
+    <string name="gen4">Gen 4</string>
+    <string name="gen5">Gen 5</string>
+    <string name="gen6">Gen 6</string>
+    <string name="gen7">Gen 7</string>
+    <string name="gen8">Gen 8</string>
+    <string name="title_activity_gen3_main">Gen3Main</string>1
 </resources>
