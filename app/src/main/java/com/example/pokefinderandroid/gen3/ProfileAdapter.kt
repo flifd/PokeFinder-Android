@@ -38,8 +38,8 @@ class ProfileAdapter(
         holder.textViewSid.text = "SID: ${profile.sid}"
         holder.textViewDeadBattery.text = "Dead Battery: ${if (profile.deadBattery) "Yes" else "No"}"
 
-        holder.buttonEdit.setOnClickListener { onEdit(position) }
-        holder.buttonDelete.setOnClickListener { onDelete(position) }
+        holder.buttonEdit.setOnClickListener { onEdit(holder.adapterPosition) }
+        holder.buttonDelete.setOnClickListener { onDelete(holder.adapterPosition) }
     }
 
     override fun getItemCount() = profiles.size

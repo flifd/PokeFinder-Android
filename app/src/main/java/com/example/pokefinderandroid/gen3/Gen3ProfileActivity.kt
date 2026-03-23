@@ -15,6 +15,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import androidx.core.content.edit
 
 class Gen3ProfileActivity : AppCompatActivity() {
 
@@ -47,14 +48,14 @@ class Gen3ProfileActivity : AppCompatActivity() {
             val loadedProfiles: List<Profile3> = gson.fromJson(json, type)
             profiles.clear()
             profiles.addAll(loadedProfiles)
-            adapter.notifyDataSetChanged()
+            adapter.notifyItemRangeInserted(0, profiles.size)
         }
     }
 
     private fun saveProfiles() {
         val prefs = getSharedPreferences("pokefinder", Context.MODE_PRIVATE)
         val json = gson.toJson(profiles)
-        prefs.edit().putString(prefsKey, json).apply()
+        prefs.edit { putString(prefsKey, json) }
     }
 
     private fun showProfileDialog(profile: Profile3?, position: Int? = null) {
@@ -65,7 +66,7 @@ class Gen3ProfileActivity : AppCompatActivity() {
         val editTextSid = dialogView.findViewById<TextInputEditText>(R.id.editTextSid)
         val checkBoxDeadBattery = dialogView.findViewById<MaterialCheckBox>(R.id.checkBoxDeadBattery)
 
-        val versions = Game.values().map { it.name }
+        val versions = Game.entries.map { it.name }
         val versionAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, versions)
         versionAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerVersion.adapter = versionAdapter
@@ -96,7 +97,7 @@ class Gen3ProfileActivity : AppCompatActivity() {
                 } else {
                     profiles.add(newProfile)
                 }
-                adapter.notifyDataSetChanged()
+                if (profile == null) adapter.notifyItemInserted(profiles.size - 1) else adapter.notifyItemChanged(position!!)
                 saveProfiles()
             }
             .setNegativeButton("Cancel", null)

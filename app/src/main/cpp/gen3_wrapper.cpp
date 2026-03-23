@@ -36,7 +36,7 @@ Java_com_example_pokefinderandroid_Gen3Bridge_getFirstStaticEncounter(JNIEnv *en
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_example_pokefinderandroid_Gen3Bridge_getHelloGen3(JNIEnv *env, jobject thiz)
+Java_com_example_pokefinderandroid_gen3_Gen3Bridge_getHelloGen3(JNIEnv *env, jobject thiz)
 {
     try {
         return env->NewStringUTF("PokeFinder Gen3 native module loaded");
