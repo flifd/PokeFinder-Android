@@ -189,11 +189,10 @@ public:
      */
     std::vector<u16> getUniqueSpecies() const;
 
-protected:
-    std::array<Slot, 12> pokemon;
-    Encounter encounter;
     u8 location;
     u8 rate;
+    std::array<Slot, 12> pokemon;
+    Encounter encounter;
 };
 
 #endif // ENCOUNTERAREA_HPP

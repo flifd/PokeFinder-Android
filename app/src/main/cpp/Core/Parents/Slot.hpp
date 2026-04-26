@@ -126,12 +126,12 @@ public:
         this->info = info;
     }
 
-private:
-    const PersonalInfo *info;
     u16 specie;
     u8 form;
     u8 minLevel;
     u8 maxLevel;
+private:
+    const PersonalInfo *info;
 };
 
 #endif // SLOT_HPP
